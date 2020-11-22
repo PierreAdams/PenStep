@@ -149,9 +149,10 @@ details[open]
   <p ># dirb 'url' </p>
   <p ># nikto 'url' </p>
    <p ># gobuster 'url' </p>
+   <p> # ffuf -c -w /path/list -u 'url/FUZZ' </p>
 </details>
     <details >
-<summary > &nbsp; &nbsp;  ➜  Bruteforce - Hydra : </summary>
+  <summary > &nbsp; &nbsp;  ➜  Bruteforce - Hydra : </summary>
   <p >#hydra -L 'user.txt -P pass.txt 'ip' http-post-form "/login.php:username=^USER^&password=^PASS^&Login=Login:Login Failed"</p>
   </details>
   <details >
