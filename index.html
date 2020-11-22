@@ -53,6 +53,22 @@
 
 <h2 id="enumeration">Enumeration</h2>
 </br>
+<details>
+  <summary>FTP </summary> <span> ⚙️ 21,20 </span> 
+  <details>
+  <summary> &nbsp; &nbsp;  ➜  Vulnerable version ? : </summary>
+    <p> <a href="https://www.exploit-db.com" target="_blank" class="lien2"/> exploitDB </a> </p>
+    <p> # Searchsploit 'ftp Version' </p>
+</details>
+<details>
+<summary> &nbsp; &nbsp;  ➜  Anonymous connection : </summary>
+  <p># ftp 'host' >  login: "", pass: "" </p>
+</details>
+  <details>
+<summary> &nbsp; &nbsp;  ➜  Bruteforce - Hydra : </summary>
+  <p># hydra -L 'listuser' -P 'listpass' -Vv 'host' ftp </p>
+</details>
+</details>   
 
 <h2 id="privilege-escalation">Privilege Escalation</h2>
 </br>
