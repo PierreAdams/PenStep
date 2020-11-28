@@ -34,6 +34,16 @@
   </head>
  
 <style>
+    
+  details[open] coucou ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; margin-left: -10px}
+  100%  {opacity: 1; margin-left: 0px}
+}
+  
   
   details[open] summary ~ * {
   animation: sweep .5s ease-in-out;
@@ -134,7 +144,7 @@ font-size: 1.3em;
 <details >
 <summary >SSH :</summary> <span>&emsp; &emsp; ⚙️ 22 </span>
 <details >
-<summary > &nbsp; &nbsp;  ➜  Vulnerable version ? : </summary>
+<summary class="coucou" > &nbsp; &nbsp;  ➜  Vulnerable version ? : </summary>
   <p class="command2"> <a href="https://www.exploit-db.com" target="_blank" class="lien2"/> 🔗 DB </a> </p>
   <p class="command"># Searchsploit 'ssh Version' </p>
 </details>
