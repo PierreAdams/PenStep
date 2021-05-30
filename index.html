@@ -222,7 +222,7 @@ font-size: 1.3em;
 <summary > &nbsp; &nbsp;  ➜  URL Scanning : </summary>
   <p class="command" ># dirb 'url' </p>
   <p class="command"># nikto -h 'url' </p>
-   <p class="command" ># gobuster dir --url 'url' --wordlist 'wordlist' </p>
+   <p class="command" ># gobuster -t 100 dir -w wordlist -u url </p>
    <p class="command"> # ffuf -c -w /path/list -u 'url/FUZZ' </p>
 </details>
     <details >
